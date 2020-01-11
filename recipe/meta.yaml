@@ -1,5 +1,5 @@
 {% set name = "jkqtplotter" %}
-{% set version = "2019.11.1" %}
+{% set version = "2019.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jkriege2/JKQtPlotter/archive/v{{ version }}.tar.gz
-  sha256: 2683d74e67d656cb4ce721242adff15d72fcb421f8260042ad4c352d0d0cba40
+  sha256: 86002eba5f189e8a4b0ca748d175e39031f7b7e68e005acf055ec7867321ce62
 
 build:
   number: 0
