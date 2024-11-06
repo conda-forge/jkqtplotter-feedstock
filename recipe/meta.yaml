@@ -1,5 +1,5 @@
 {% set name = "jkqtplotter" %}
-{% set version = "2019.11.1" %}
+{% set version = "2019.11.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/jkriege2/JKQtPlotter/archive/v{{ version }}.tar.gz
-  sha256: 2683d74e67d656cb4ce721242adff15d72fcb421f8260042ad4c352d0d0cba40
+  sha256: 4fb77163b5067afda1cb4e08176e3c9d5289a9f63a483638f6ebd4a9c1ce9d70
 
 build:
   number: 0
-  skip: True  # [win and vc<14]
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -38,9 +38,9 @@ requirements:
 
 test:
   commands:
-      - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.so  # [linux]
-      - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.dylib  # [osx]
-      - if exist %LIBRARY_PREFIX%\lib\JKQTPlotterSharedLib_Release.lib (exit 0) else (exit 1)  # [win]
+    - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.so    # [linux]
+    - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.dylib    # [osx]
+    - if exist %LIBRARY_PREFIX%\lib\JKQTPlotterSharedLib_Release.lib (exit 0) else (exit 1)    # [win]
 
 about:
   home: https://github.com/jkriege2/JKQtPlotter
@@ -48,12 +48,12 @@ about:
   license_file:
     - LICENSE
     - lib/jkqtmathtext/resources/xits/OFL.txt
-  summary: 'An extensive library of function/data plotter classes for Qt'
+  summary: An extensive library of function/data plotter classes for Qt
 
   description: |
-      An extensive Qt4/Qt5 Plotter framework (including a fast variant and a
-      LaTeX equation renderer), written fully in C/C++ and without external
-      dependencies.
+    An extensive Qt4/Qt5 Plotter framework (including a fast variant and a
+    LaTeX equation renderer), written fully in C/C++ and without external
+    dependencies.
   doc_url: http://jkriege2.github.io/JKQtPlotter/index.html
   dev_url: https://github.com/jkriege2/JKQtPlotter
 
