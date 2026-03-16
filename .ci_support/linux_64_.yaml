@@ -1,15 +1,14 @@
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '7'
+- '14'
 docker_image:
-- condaforge/linux-anvil-comp7
-pin_run_as_build:
-  qt:
-    max_pin: x.x
+- quay.io/condaforge/linux-anvil-x86_64:alma9
 qt:
-- '5.12'
+- '5.15'
+target_platform:
+- linux-64
