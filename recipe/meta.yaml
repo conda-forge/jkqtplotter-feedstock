@@ -10,8 +10,8 @@ source:
   sha256: 2683d74e67d656cb4ce721242adff15d72fcb421f8260042ad4c352d0d0cba40
 
 build:
-  number: 0
-  skip: True  # [win and vc<14]
+  number: 1
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -19,28 +19,19 @@ requirements:
     - cmake
     - make  # [unix]
     - ninja   # [win]
-    - {{ cdt('mesa-libgl-devel') }}      # [linux]
-    - {{ cdt('mesa-dri-drivers') }}      # [linux]
-    - {{ cdt('mesa-libegl-devel') }}     # [linux]
-    - {{ cdt('libselinux') }}            # [linux]
-    - {{ cdt('libxdamage') }}            # [linux]
-    - {{ cdt('libxfixes') }}             # [linux]
-    - {{ cdt('libxxf86vm') }}            # [linux]
-    - {{ cdt('libxcb') }}                # [linux]
-    - {{ cdt('libxext') }}               # [linux]
-    - {{ cdt('xorg-x11-server-xvfb') }}  # [linux]
-    - {{ cdt('libxau') }}                # [linux]
-    - {{ cdt('libxi-devel') }}           # [linux]
   host:
     - qt
+    - libgl-devel                        # [linux]
+    - libegl-devel                       # [linux]
+    - xorg-libxi                         # [linux]
   run:
     - qt
 
 test:
   commands:
-      - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.so  # [linux]
-      - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.dylib  # [osx]
-      - if exist %LIBRARY_PREFIX%\lib\JKQTPlotterSharedLib_Release.lib (exit 0) else (exit 1)  # [win]
+    - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.so    # [linux]
+    - test -f $PREFIX/lib/libJKQTPlotterSharedLib_Release.dylib    # [osx]
+    - if exist %LIBRARY_PREFIX%\lib\JKQTPlotterSharedLib_Release.lib (exit 0) else (exit 1)    # [win]
 
 about:
   home: https://github.com/jkriege2/JKQtPlotter
@@ -51,9 +42,9 @@ about:
   summary: 'An extensive library of function/data plotter classes for Qt'
 
   description: |
-      An extensive Qt4/Qt5 Plotter framework (including a fast variant and a
-      LaTeX equation renderer), written fully in C/C++ and without external
-      dependencies.
+    An extensive Qt4/Qt5 Plotter framework (including a fast variant and a
+    LaTeX equation renderer), written fully in C/C++ and without external
+    dependencies.
   doc_url: http://jkriege2.github.io/JKQtPlotter/index.html
   dev_url: https://github.com/jkriege2/JKQtPlotter
 
