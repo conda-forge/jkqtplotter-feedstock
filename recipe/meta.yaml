@@ -10,7 +10,7 @@ source:
   sha256: 2683d74e67d656cb4ce721242adff15d72fcb421f8260042ad4c352d0d0cba40
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -32,9 +32,9 @@ requirements:
     - {{ cdt('libxau') }}                # [linux]
     - {{ cdt('libxi-devel') }}           # [linux]
   host:
-    - qt
+    - qt-main
   run:
-    - qt
+    - qt-main
 
 test:
   commands:
